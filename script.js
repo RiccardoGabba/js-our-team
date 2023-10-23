@@ -37,22 +37,21 @@ for (let i = 0; i < cards.length; i++) {
     printCol(cards[i]);
 }
 
-
 function printCol(cards) {
     const col = document.createElement('div');
-    col.classList.add('col-4');
+    col.classList.add('col-4', 'mt-2');
     const template = `
-    <div class="card text-start">
+    <div class="card text-center">
      <img class="card-img-top" src="img/${cards.picture}"
      <div class="card-body">
-            <h4 class="card-title">${cards.name}</h4>
+            <h4 class="card-title">${cards.nome}</h4>
             <p class="card-text">${cards.role}
             </p>
             </div>
         </div>
     `;
     col.innerHTML = template 
-    const row = document.getElementById('row');
-
-    row.append('col')
+    const row = document.querySelector('.row');
+    row.append(col)
 }
+
